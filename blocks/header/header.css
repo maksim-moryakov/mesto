@@ -2,3 +2,18 @@
     max-width: 880px;
     padding-top: 45px;
 }
+
+@media screen and (max-width: 880px) {
+    .header {
+        padding-top: 28px;
+    }
+}
+
+/* @media screen and (max-width: 767px) {
+    .logo {
+        width: 104px;
+        height: 24.5px;
+        padding-left: 27px;
+        padding-bottom: 31px;
+    }
+} */
