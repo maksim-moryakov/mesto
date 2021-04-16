@@ -9,3 +9,6 @@
 @import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/logo/logo.css);
+
+@import url(../footer/footer.css);
+@import url(../footer/__copyright/footer__copyright.css);
