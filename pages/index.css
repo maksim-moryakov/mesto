@@ -10,5 +10,14 @@
 
 @import url(../blocks/logo/logo.css);
 
+@import url(../blocks/main/main.css);
+
+@import url(../blocks/elements/elements.css);
+
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__items/element__items.css);
+@import url(../blocks/element/__text/element__text.css);
+
 @import url(../footer/footer.css);
 @import url(../footer/__copyright/footer__copyright.css);
