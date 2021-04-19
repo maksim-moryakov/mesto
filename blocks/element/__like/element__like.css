@@ -1,3 +1,17 @@
 .element__like {
-    padding-right: 20px;
+    width: 23px;
+    height: 19px;
+    background: url(../../../image/heart.svg) transparent no-repeat center/contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
+
+.element__like:hover {
+    opacity: 0.5;
+ }
+ 
+ .element__like:active {
+    background-image: url(../../../image/dark_heart.svg);
+    opacity: 1;
+ }
