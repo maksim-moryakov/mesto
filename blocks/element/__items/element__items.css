@@ -1,4 +1,7 @@
 .element__items {
     background-color: #FFFFFF;
     display: flex;
+    justify-content: space-between;
+    margin-top: -3px;
+    border-radius: 0 0 10px 10px;
 }
