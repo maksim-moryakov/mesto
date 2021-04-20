@@ -7,6 +7,7 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    /* бордер-радиус был задан */
     border-radius: 2px;
     cursor: pointer;
 }
