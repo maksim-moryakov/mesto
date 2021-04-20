@@ -1,11 +1,11 @@
-const openEditProfileButton = document.querySelector('.profile__edit-button');
-const popup = document.querySelector('.popup');
-const closePopupButton = document.querySelector('.popup__close');
-const profileName = document.querySelector('.profile__title');
-const profileJob = document.querySelector('.profile__subtitle');
-const profileNameForm = popup.querySelector('#popup__name');
-const profileJobForm = popup.querySelector('#popup__job');
-const popupForm = popup.querySelector('.form');
+let openEditProfileButton = document.querySelector('.profile__edit-button');
+let popup = document.querySelector('.popup');
+let closePopupButton = document.querySelector('.popup__close');
+let profileName = document.querySelector('.profile__title');
+let profileJob = document.querySelector('.profile__subtitle');
+let profileNameForm = popup.querySelector('#user-name');
+let profileJobForm = popup.querySelector('#user-job');
+let popupForm = popup.querySelector('.form');
 
 // добавления/удаления класса у popup
 function togglePopup (evt) {

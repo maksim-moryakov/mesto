@@ -5,3 +5,9 @@
     font-family: 'Inter', Arial, sans-serif;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 1000px) {
+    .body  {
+        max-width: calc(100% - 38px);
+    }
+}
