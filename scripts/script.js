@@ -7,34 +7,34 @@ let profileNameForm = popup.querySelector('#user-name');
 let profileJobForm = popup.querySelector('#user-job');
 let popupForm = popup.querySelector('.form');
 
-// добавления/удаления класса у popup
-function togglePopup (evt) {
-   evt.preventDefault();
-   popup.classList.toggle('popup_opened');
-}
-
-// сохранения данных из popup
-function savePopupValue (evt) {
-   profileName.textContent = profileNameForm.value;
-   profileJob.textContent = profileJobForm.value;
-   togglePopup(evt);
-}
-
-// открытия popup при нажатии на кнопку редактирование профиля пользователя
-function editProfile (evt) {
-   togglePopup(evt);
+// добавления класса у popup и получение данных профиля пользователя
+function openPopup (evt) {
+   popup.classList.add('popup_opened');
    profileNameForm.value = profileName.textContent;
    profileJobForm.value = profileJob.textContent;
 }
 
+// удаление класса у popup
+function closePopup (evt) {
+   popup.classList.remove('popup_opened');
+}
+
+// сохранения измененных данных из popup
+function savePopupValue (evt) {
+   evt.preventDefault();
+   profileName.textContent = profileNameForm.value;
+   profileJob.textContent = profileJobForm.value;
+   closePopup(evt);
+}
+
 // обработчик события на крестик, закрытия popup
-closePopupButton.addEventListener('click', togglePopup);
+closePopupButton.addEventListener('click', closePopup);
 
 // обработчик события при нажатии кнопки Сохранить
 popupForm.addEventListener('submit', savePopupValue);
 
 // обработчик события на кнопку редактирования профиля пользователя
-openEditProfileButton.addEventListener('click', editProfile);
+openEditProfileButton.addEventListener('click', openPopup);
 
 
 
