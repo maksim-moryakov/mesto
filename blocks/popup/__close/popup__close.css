@@ -19,8 +19,8 @@
 @media screen and (max-width: 767px) {
     .popup__close {
         top: -40px;
-        right: 0;
-        width: 26px;
-        height: 26px;
+        right: -5px;
+        /* крест закрытия одинаковый, только у вылезал за размер и получались острые края  */
+        background-size: contain;
     }
   }
