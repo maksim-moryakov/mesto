@@ -9,18 +9,18 @@
     width: 36px;
     height: 36px;
     cursor: pointer;
-
+    transition: opacity linear 1s;
 }
 
 .popup__close:hover {
     opacity: 0.6;
+    transition: opacity linear 0.5s;
 }
 
 @media screen and (max-width: 767px) {
     .popup__close {
         top: -40px;
         right: -5px;
-        /* крест закрытия одинаковый, только у вылезал за размер и получались острые края  */
         background-size: contain;
     }
   }

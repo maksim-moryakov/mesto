@@ -23,65 +23,63 @@
             <button type="button" class="profile__add-button" aria-label="Добавить пост"></button>
         </section>
         <section class="elements">
-            <figure class="element">
-                <img src="./image/Karachaevsk_church.jpg" alt="Храм в Карачаевске" class="element__image">
-                <figcaption class="element__items">
-                    <h2 class="element__text">Карачаево-Черкесия</h2>
+            <template id="template-card">
+                <article class="element">
+                    <button type="button" class="element__delete-button"></button>
+                    <img src="#" alt="#" class="element__image">
+                    <h2 class="element__text"></h2>
                     <button type="button" class="element__like" aria-label="Мне нравиться"></button>
-                </figcaption>
-            </figure>
-            <figure class="element">
-                <img src="./image/Kurshskaja_kosa.jpg" alt="Куршская коса" class="element__image">
-                <figcaption class="element__items">
-                    <h2 class="element__text">Куршская коса</h2>
-                    <button type="button" class="element__like" aria-label="Мне нравиться"></button>
-                </figcaption>
-            </figure>
-            <figure class="element">
-                <img src="./image/lake_Teletskoe.jpg" alt="Озеро Телецкое" class="element__image">
-                <figcaption class="element__items">
-                    <h2 class="element__text">Алтайский край</h2>
-                    <button type="button" class="element__like" aria-label="Мне нравиться"></button>
-                </figcaption>
-            </figure>
-            <figure class="element">
-                <img src="./image/Gora_Elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-                <figcaption class="element__items">
-                    <h2 class="element__text">Эльбрус</h2>
-                    <button type="button" class="element__like" aria-label="Мне нравиться"></button>
-                </figcaption>
-            </figure>
-            <figure class="element">
-                <img src="./image/Bojkal.jpg" alt="Озеро Байкал" class="element__image">
-                <figcaption class="element__items">
-                    <h2 class="element__text">Байкал</h2>
-                    <button type="button" class="element__like" aria-label="Мне нравиться"></button>
-                </figcaption>
-            </figure>
-            <figure class="element">
-                <img src="./image/Dombaj.png" alt="Домбай" class="element__image">
-                <figcaption class="element__items">
-                    <h2 class="element__text">Домбай</h2>
-                    <button type="button" class="element__like" aria-label="Мне нравиться"></button>
-                </figcaption>
-            </figure>
+                </article>
+            </template>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2021 Моряков Максим</p>
     </footer>
     
-    <div class="popup">
+    <div class="popup popup_type_edit-profile">
         <div class="popup__conteiner">
             <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="form" action="#" method="GET">
-                <input class="form__input" type="text" name="username" id="user-name" minlength="3" maxlength="30" placeholder="Имя" required>
-                <input class="form__input" type="text" name="userjob" id="user-job" minlength="3" maxlength="30" placeholder="О себе" required>
-                <button class="form__button" type="submit" aria-label="Сохранить">Сохранить</button>
+            <form class="form" name="edit-profile" id="form-profile">
+                <input class="form__input form__input_type_name" 
+                    type="text" name="username"  
+                    minlength="3" maxlength="30" 
+                    placeholder="Имя" 
+                    required 
+                    value="Жак-Ив Кусто">
+                <input class="form__input form__input_type_description" 
+                    type="text" 
+                    name="userjob" 
+                    minlength="3" maxlength="30" 
+                    placeholder="О себе" 
+                    required 
+                    value="Исследователь океана">
+                <button class="form__button" type="submit" aria-label="Сохранить" value="Сохранить">Сохранить</button>
             </form>
         </div>
     </div>
+
+    <div class="popup popup_type_add-card">
+        <div class="popup__container">
+            <button type="button" class="popup__close popup__button-close_add"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form name="add-element" class="form" id="form-card">
+                <input type="text" name="element-name" placeholder="Название" class="form__input form__input_type_place" value="">
+                <input type="text" name="element-link" placeholder="Ссылка на картинку" class="form__input form__input_type_link" value="">
+                <button type="submit" class="form__button" value="Сохранить" id="profileSave" aria-label="Сохранить">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="popup popup_type_image">
+        <figure class="figure">
+            <button class="popup__close popup__button-close_add" type="button" id="closeImg"></button>
+            <img src="#" alt="#" class="figure__image"/>
+            <figcaption class="figure__caption"></figcaption>
+        </figure>
+    </div>
+
 <script src="./scripts/script.js"></script>
 </body>
 </html>
