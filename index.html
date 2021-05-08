@@ -25,7 +25,7 @@
         <section class="elements">
             <template id="template-card">
                 <article class="element">
-                    <button type="button" class="element__delete-button"></button>
+                    <button type="button" class="element__delete-button" aria-label="Удалить пост"></button>
                     <img src="#" alt="#" class="element__image">
                     <h2 class="element__text"></h2>
                     <button type="button" class="element__like" aria-label="Мне нравиться"></button>
@@ -38,7 +38,7 @@
     </footer>
     
     <div class="popup popup_type_edit-profile">
-        <div class="popup__conteiner">
+        <div class="popup__container">
             <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="form" name="edit-profile" id="form-profile">
@@ -47,26 +47,26 @@
                     minlength="3" maxlength="30" 
                     placeholder="Имя" 
                     required 
-                    value="Жак-Ив Кусто">
+                    value="">
                 <input class="form__input form__input_type_description" 
                     type="text" 
                     name="userjob" 
                     minlength="3" maxlength="30" 
                     placeholder="О себе" 
                     required 
-                    value="Исследователь океана">
+                    value="">
                 <button class="form__button" type="submit" aria-label="Сохранить" value="Сохранить">Сохранить</button>
             </form>
         </div>
     </div>
 
     <div class="popup popup_type_add-card">
-        <div class="popup__conteiner">
+        <div class="popup__container">
             <button type="button" class="popup__close popup__button-close"></button>
             <h2 class="popup__title">Новое место</h2>
             <form name="add-element" class="form" id="form-card">
-                <input type="text" name="element-name" placeholder="Название" class="form__input form__input_type_place" value="">
-                <input type="text" name="element-link" placeholder="Ссылка на картинку" class="form__input form__input_type_link" value="">
+                <input type="text" name="element-name" placeholder="Название" class="form__input form__input_type_place" value="" required>
+                <input type="url" name="element-link" placeholder="Ссылка на картинку" class="form__input form__input_type_link" value="" required>
                 <button type="submit" class="form__button" value="Сохранить" id="profileSave" aria-label="Сохранить">Сохранить</button>
             </form>
         </div>
@@ -80,6 +80,7 @@
         </figure>
     </div>
 
+<script src="scripts/initial-сards.js"></script>
 <script src="./scripts/script.js"></script>
 </body>
 </html>

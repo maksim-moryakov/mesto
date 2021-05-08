@@ -22,33 +22,6 @@ const closeImgButton = document.querySelector('#closeImg');
 
 const template = document.querySelector('#template-card').content;
 
-const initialCards = [
-   {
-     name: 'Архыз',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-   },
-   {
-     name: 'Челябинская область',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-   },
-   {
-     name: 'Иваново',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-   },
-   {
-     name: 'Камчатка',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-   },
-   {
-     name: 'Холмогорский район',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-   },
-   {
-     name: 'Байкал',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-   }
- ];  
-
  //Добавления карточек при загрузке страницы
  initialCards.forEach (function (item){
    renderCard(item.link, item.name);
@@ -73,7 +46,7 @@ function createCard(link, name) {
 }
 
 // Добавления карточек через инпут попапа
-function formCardSubmitHandler(evt) {
+function handleCardFormSubmit(evt) {
    evt.preventDefault();
    renderCard(inputAddCardLink.value, inputAddCardName.value);
    popupFormCard.reset();
@@ -84,8 +57,7 @@ function formCardSubmitHandler(evt) {
 
 function deleteCard(card) {
    card.querySelector('.element__delete-button').addEventListener('click', function(evt) {
-       const element = evt.target.closest('.element')
-       element.remove();
+       const element = evt.target.closest('.element').remove();
    });
    }
 
@@ -115,7 +87,7 @@ function openEditPopup() {
 }
 
 // Изменение данных профиля 
-function formProfileSubmitHandler(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileText.textContent = jobInput.value;
@@ -124,7 +96,6 @@ function formProfileSubmitHandler(evt) {
 
 function closeAddCardPopup() {
    closePopup(popupAddCard);
-   popupFormCard.reset();
 }
 
 function openPopup(popup) {
@@ -136,7 +107,7 @@ function closePopup(popup) {
 }
 
 //слушатель отправки формы редактирования профиля
-popupFormProfile.addEventListener('submit', formProfileSubmitHandler); 
+popupFormProfile.addEventListener('submit', handleProfileFormSubmit); 
 
 //слушатель кнопки открытия попапа редактирования профиля
 openPopupButton.addEventListener('click', openEditPopup);
@@ -155,7 +126,7 @@ openAddCardButton.addEventListener('click', () => {
 closePopupAddButton.addEventListener('click', closeAddCardPopup);
 
 //слушатель отправки формы добавления карточки из попапа
-popupFormCard.addEventListener('submit', formCardSubmitHandler);
+popupFormCard.addEventListener('submit', handleCardFormSubmit);
 
 //слушатель кнопки закрытия попапа с фото
 closeImgButton.addEventListener('click', () => {
