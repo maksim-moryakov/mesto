@@ -57,7 +57,7 @@ function handleCardFormSubmit(evt) {
 
 function deleteCard(card) {
    card.querySelector('.element__delete-button').addEventListener('click', function(evt) {
-       const element = evt.target.closest('.element').remove();
+      evt.target.closest('.element').remove();
    });
    }
 
@@ -114,12 +114,12 @@ openPopupButton.addEventListener('click', openEditPopup);
 
 //кнопка закрытия попапа редактирования профиля
 closePopupButton.addEventListener('click', () => {
-   closePopup(popupEditProfile)
+   closePopup(popupEditProfile);
 });
 
 //Слушатель кнопки открытия попапа для добавления карточки
 openAddCardButton.addEventListener('click', () => {
-   openPopup(popupAddCard)
+   openPopup(popupAddCard);
 });
 
 //Слушатель кнопки закрытия попапа добавления карточки
