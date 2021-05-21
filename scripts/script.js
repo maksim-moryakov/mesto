@@ -22,6 +22,14 @@ const closeImgButton = document.querySelector('#closeImg');
 
 const template = document.querySelector('#template-card').content;
 
+const config = {
+  formSelector: '.popup__container',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__button',
+  inputErrorClass: 'form__input_type_error',
+  errorClass: 'form__input-error_is-active',
+};
+
  //Добавления карточек при загрузке страницы
  initialCards.forEach (function (item){
    renderCard(item.link, item.name);
@@ -132,3 +140,5 @@ popupFormCard.addEventListener('submit', handleCardFormSubmit);
 closeImgButton.addEventListener('click', () => {
    closePopup(popupFigure);
 });
+
+enableValidation(config);

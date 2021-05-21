@@ -38,38 +38,45 @@
     </footer>
     
     <div class="popup popup_type_edit-profile">
-        <div class="popup__container">
-            <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
+        <form class="popup__container" name="profileValues">
+            <button type="button" class="popup__close" aria-label="Закрыть окно" type="reset"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="edit-profile" id="form-profile">
+            <fieldset class="form" name="edit-profile" id="form-profile">
                 <input class="form__input form__input_type_name" 
-                    type="text" name="username"  
-                    minlength="3" maxlength="30" 
+                    type="text" name="username" id="userName"  
+                    minlength="2" maxlength="40" 
                     placeholder="Имя" 
                     required 
                     value="">
+                <span class="form__input-error" id="userName-error"></span>
                 <input class="form__input form__input_type_description" 
-                    type="text" 
-                    name="userjob" 
-                    minlength="3" maxlength="30" 
+                    type="text" name="userjob" id="userjob"
+                    minlength="2" maxlength="200" 
                     placeholder="О себе" 
                     required 
                     value="">
+                <span class="form__input-error" id="userjob-error"></span>
                 <button class="form__button" type="submit" aria-label="Сохранить" value="Сохранить">Сохранить</button>
-            </form>
-        </div>
+            </fieldset>
+        </form>
     </div>
 
     <div class="popup popup_type_add-card">
-        <div class="popup__container">
+        <form class="popup__container">
             <button type="button" class="popup__close popup__button-close"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form name="add-element" class="form" id="form-card">
-                <input type="text" name="element-name" placeholder="Название" class="form__input form__input_type_place" value="" required>
+            <fieldset name="add-element" class="form" id="form-card">
+                <input type="text" name="element-name" id="element-name" 
+                    placeholder="Название" class="form__input form__input_type_place" 
+                    value="" 
+                    minlength="2" maxlength="30" 
+                    required>
+                <span class="form__input-error" id="element-name-error"></span>
                 <input type="url" name="element-link" placeholder="Ссылка на картинку" class="form__input form__input_type_link" value="" required>
+                <span class="form__input-error" id="element-link-error"></span>
                 <button type="submit" class="form__button" value="Сохранить" id="profileSave" aria-label="Сохранить">Сохранить</button>
-            </form>
-        </div>
+            </fieldset>
+        </form>
     </div>
     
     <div class="popup popup_type_image">
@@ -80,7 +87,8 @@
         </figure>
     </div>
 
-<script src="scripts/initial-сards.js"></script>
+<script src="./scripts/initial-сards.js"></script>
+<script src="./scripts/validate.js"></script>
 <script src="./scripts/script.js"></script>
 </body>
 </html>
