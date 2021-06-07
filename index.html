@@ -38,14 +38,14 @@
     </footer>
     
     <div class="popup popup_type_edit-profile">
-        <form class="popup__container" name="profileValues">
-            <button type="button" class="popup__close" aria-label="Закрыть окно" type="reset"></button>
+        <div class="popup__container">
+            <button type="button" class="popup__close" id="edit-profile-close" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <fieldset class="form" name="edit-profile" id="form-profile">
+            <form class="form" name="edit-profile" id="form-profile" novalidate>
                 <input class="form__input form__input_type_name" 
                     type="text" name="username" id="userName"  
                     minlength="2" maxlength="40" 
-                    placeholder="Имя" 
+                    placeholder="Имя"
                     required 
                     value="">
                 <span class="form__input-error" id="userName-error"></span>
@@ -57,26 +57,26 @@
                     value="">
                 <span class="form__input-error" id="userjob-error"></span>
                 <button class="form__button" type="submit" aria-label="Сохранить" value="Сохранить">Сохранить</button>
-            </fieldset>
-        </form>
+            </form>
+        </div>
     </div>
 
     <div class="popup popup_type_add-card">
-        <form class="popup__container">
+        <div class="popup__container">
             <button type="button" class="popup__close popup__button-close"></button>
             <h2 class="popup__title">Новое место</h2>
-            <fieldset name="add-element" class="form" id="form-card">
+            <form name="add-element" class="form" id="form-card" novalidate>
                 <input type="text" name="element-name" id="element-name" 
                     placeholder="Название" class="form__input form__input_type_place" 
-                    value="" 
+                    value="" id="place"
                     minlength="2" maxlength="30" 
                     required>
                 <span class="form__input-error" id="element-name-error"></span>
-                <input type="url" name="element-link" placeholder="Ссылка на картинку" class="form__input form__input_type_link" value="" required>
-                <span class="form__input-error" id="element-link-error"></span>
+                <input type="url" name="element-link" placeholder="Ссылка на картинку" class="form__input form__input_type_link" id="link" value="" required>
+                <span class="form__input-error" id="link-error"></span>
                 <button type="submit" class="form__button" value="Сохранить" id="profileSave" aria-label="Сохранить">Сохранить</button>
-            </fieldset>
-        </form>
+            </form>
+        </div>
     </div>
     
     <div class="popup popup_type_image">

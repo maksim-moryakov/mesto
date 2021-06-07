@@ -1,5 +1,5 @@
 const openPopupButton = document.querySelector('.profile__edit-button');
-const closePopupButton = document.querySelector('.popup__close');
+const closePopupButton = document.querySelector('#edit-profile-close');
 const nameInput = document.querySelector('.form__input_type_name');
 const jobInput = document.querySelector('.form__input_type_description');
 const profileName = document.querySelector('.profile__title');
@@ -15,20 +15,30 @@ const popupFormCard = document.querySelector('#form-card');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupFigure = document.querySelector('.popup_type_image');
+const addCardButtonSave = popupAddCard.querySelector('.form__button');
 
 const popupFigureImage = popupFigure.querySelector('.figure__image');
 const popupFigureCaption = popupFigure.querySelector('.figure__caption');
 const closeImgButton = document.querySelector('#closeImg');
 
 const template = document.querySelector('#template-card').content;
+const card = template.querySelector('.element').cloneNode(true);
 
-// const config = {
-//   formSelector: '.popup__container',
-//   inputSelector: '.form__input',
-//   submitButtonSelector: '.form__button',
-//   inputErrorClass: 'form__input_type_error',
-//   errorClass: 'form__input-error_is-active',
-// };
+// Функция закрытия по оверлею 
+const setOverlayListener = function(evt) {
+   const openedPopup = document.querySelector('.popup_opened');
+       if(evt.target === openedPopup) {
+           closePopup(openedPopup);
+       }
+   }
+
+// Функция закрытия по кнопке Escape
+const setEscListener = function(evt) {
+           if(evt.key === 'Escape') {
+           const openedPopup = document.querySelector('.popup_opened');
+           closePopup(openedPopup);
+       }
+}
 
  //Добавления карточек при загрузке страницы
  initialCards.forEach (function (item){
@@ -59,6 +69,7 @@ function handleCardFormSubmit(evt) {
    renderCard(inputAddCardLink.value, inputAddCardName.value);
    popupFormCard.reset();
    closePopup(popupAddCard);
+   addCardButtonSave.disabled = true;
 }
 
 //Удаления картинок
@@ -108,6 +119,8 @@ function closeAddCardPopup() {
 
 function openPopup(popup) {
    popup.classList.add('popup_opened');
+   document.addEventListener('mousedown', setOverlayListener);
+   document.addEventListener('keydown', setEscListener);
 }
 
 function closePopup(popup) {
@@ -140,5 +153,3 @@ popupFormCard.addEventListener('submit', handleCardFormSubmit);
 closeImgButton.addEventListener('click', () => {
    closePopup(popupFigure);
 });
-
-//enableValidation(config);
