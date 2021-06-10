@@ -18,7 +18,7 @@ const toggleButtonState = (inputList, buttonElement) => {
     }
 }
 
-const hideErrorMessage = (formElement, inputElement) => {
+const hideErrorMessage = (formElement, inputElement, config) => {
     //Убрать спан с ошибкой под инпутом
     const { inputErrorClass, errorClass } = config;
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -29,7 +29,7 @@ const hideErrorMessage = (formElement, inputElement) => {
     errorElement.textContent = ''
 }
 
-const showErrorMessage = (formElement, inputElement) => {
+const showErrorMessage = (formElement, inputElement, config) => {
     //Добавить спан с ошибкой под инпутом
     const { inputErrorClass, errorClass } = config;
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);

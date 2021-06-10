@@ -23,6 +23,7 @@ const closeImgButton = document.querySelector('#closeImg');
 
 const template = document.querySelector('#template-card').content;
 const card = template.querySelector('.element').cloneNode(true);
+const esc = 'Escape';
 
 // Функция закрытия по оверлею 
 const setOverlayListener = function(evt) {
@@ -34,7 +35,7 @@ const setOverlayListener = function(evt) {
 
 // Функция закрытия по кнопке Escape
 const setEscListener = function(evt) {
-           if(evt.key === 'Escape') {
+           if(evt.key === esc) {
            const openedPopup = document.querySelector('.popup_opened');
            closePopup(openedPopup);
        }
@@ -51,10 +52,11 @@ function renderCard(link, name) {
 
 function createCard(link, name) {
    const card = template.querySelector('.element').cloneNode(true);
-
-   card.querySelector('.element__image').src = link;
-   card.querySelector('.element__image').alt = name;
-   card.querySelector('.element__text').textContent = name;
+   const elementImage = card.querySelector('.element__image');
+   const elementText = card.querySelector('.element__text');
+   elementImage.src = link;
+   elementImage.alt = name;
+   elementText.textContent = name;
 
    handleLikeButton(card);
    deleteCard(card);
@@ -125,6 +127,8 @@ function openPopup(popup) {
 
 function closePopup(popup) {
    popup.classList.remove('popup_opened');
+   document.removeEventListener('mousedown', setOverlayListener);
+   document.removeEventListener('keydown', setEscListener);
 }
 
 //слушатель отправки формы редактирования профиля
