@@ -1,3 +1,4 @@
+//hasInvalidInput передали в FormValidator.js
 const hasInvalidInput = (inputList) => {
     return inputList.some((item) => {
       if (item.validity.valid) {
@@ -8,7 +9,7 @@ const hasInvalidInput = (inputList) => {
       }
     })
   };
-
+//toggleButtonState передали в FormValidator.js
 const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
         buttonElement.disabled = true;
@@ -17,7 +18,7 @@ const toggleButtonState = (inputList, buttonElement) => {
         buttonElement.disabled = false;
     }
 }
-
+// hideErrorMessage передали в FormValidator.js
 const hideErrorMessage = (formElement, inputElement, config) => {
     //Убрать спан с ошибкой под инпутом
     const { inputErrorClass, errorClass } = config;
@@ -28,7 +29,7 @@ const hideErrorMessage = (formElement, inputElement, config) => {
 
     errorElement.textContent = ''
 }
-
+// showErrorMessage передали в FormValidator.js
 const showErrorMessage = (formElement, inputElement, config) => {
     //Добавить спан с ошибкой под инпутом
     const { inputErrorClass, errorClass } = config;
@@ -39,7 +40,7 @@ const showErrorMessage = (formElement, inputElement, config) => {
 
     errorElement.textContent = inputElement.validationMessage;
 }
-
+// checkInputValidity передали в FormValidator.js
 const checkInputValidity = (formElement, inputElement, config) => {
     if (inputElement.validity.valid) {
         hideErrorMessage(formElement, inputElement, config);
@@ -48,7 +49,7 @@ const checkInputValidity = (formElement, inputElement, config) => {
         showErrorMessage(formElement, inputElement, config);
     }
 }
-
+// setEventListeners передали в FormValidator.js
 const setEventListeners = (formElement, config) => {
     const { inputSelector, submitButtonSelector, ...restConfig} = config;
     formElement.addEventListener('submit', (evt) => {
@@ -66,7 +67,7 @@ const setEventListeners = (formElement, config) => {
             })
         });
     }
-
+// enableValidation передали в FormValidator.js
 const enableValidation = (config) => {
     const { formSelector, ...restConfig} = config;
     const formList = Array.from(document.querySelectorAll(formSelector));
