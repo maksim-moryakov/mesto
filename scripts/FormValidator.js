@@ -6,7 +6,7 @@ class FormValidator {
 
     _hideErrorMessage(inputElement, config) {
         const { inputErrorClass, errorClass } = config;
-        const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
+        const errorElement = this._formName.querySelector(`#${inputElement.id}-error`);
     
         inputElement.classList.remove(inputErrorClass);
         errorElement.classList.remove(errorClass);
@@ -16,7 +16,7 @@ class FormValidator {
 
     _showErrorMessage(inputElement, config) {
         const { inputErrorClass, errorClass } = config;
-        const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
+        const errorElement = this._formName.querySelector(`#${inputElement.id}-error`);
     
         inputElement.classList.add(inputErrorClass);
         errorElement.classList.add(errorClass);
@@ -66,8 +66,8 @@ class FormValidator {
         inputList.forEach((inputElement) => {
             this._checkInputValidity(inputElement, rest);
             inputElement.addEventListener('input', () => {
-                checkInputValidity(formElement, inputElement, rest);
-                toggleButtonState(inputList, buttonElement);
+                this._checkInputValidity(inputElement, rest);
+                this._toggleButtonState(inputList, buttonElement);
             })
         })
     }
