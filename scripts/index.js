@@ -18,6 +18,7 @@ const popupFormCard = document.querySelector('#form-card');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const formAddCard = popupAddCard.querySelector('.form');
+const inputList = formAddCard.querySelectorAll('.form__input');
 const addCardButtonSave = popupAddCard.querySelector('.form__button');
 
 const esc = 'Escape';
@@ -113,7 +114,6 @@ closePopupButton.addEventListener('click', () => {
 // Слушатель кнопки открытия попапа для добавления карточки
 openAddCardButton.addEventListener('click', () => {
    openPopup(popupAddCard);
-   const inputList = formAddCard.querySelectorAll('.form__input');
     inputList.forEach((input) => {
         input.addEventListener('keydown', () => {
             enableValidation(config, popupAddCard);
